@@ -6,6 +6,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 
 const indexRouter = require('./routes/index')
+const bookRouter = require('./routes/books')
 const authorRouter = require('./routes/authors')
 const bodyParser = require('body-parser')
 
@@ -28,5 +29,6 @@ const db = mongoose.connection
 
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
+app.use('/books', bookRouter)
 
 app.listen(process.env.PORT || 3000)
